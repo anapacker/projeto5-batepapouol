@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+strong{
+    font-weight: bold;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+
+}
+
+img{
+    width: 75px;
+    margin: 16px 0 16px 22px;
+}
+.icon-header{
+    font-size: 45px;
+    margin-right: 22px;
+}
+
+main{
+    
+}
+.box-mesages{
+    width: 100%;
+    margin-top:112px;
+}
+.mensagem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+}
+.mensagem-privada{
+    background-color: #FFDEDE;
+}
+.mensagem-status{
+    background-color:#DCDCDC ;
+
+}
