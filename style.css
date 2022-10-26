@@ -4,7 +4,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #E5E5E5;
-    min-width: 100vw;
+    /* min-width: 100vw; */
     min-height: 100vh;
 }
 strong{
@@ -37,25 +37,23 @@ img{
     width: 100%;
     margin-top:112px;
 }
-span{
-    margin-left: 5px;
-}
 li{
     width: 100%;
-    margin: 10px 0 10px 0;
+    padding: 10px 5px 10px 5px;    
 }
+
 .mensagem{
     background-color: #ffffff;
-    width: 100%;
     display: flex;
-    align-items: center;
+    gap: 5px;
+
 }
-.mensagem-privada{
+.privada{
     background-color: #FFDEDE;
     
 
 }
-.mensagem-status{
+.status{
     background-color:#DCDCDC ;
 
 }
@@ -76,9 +74,11 @@ input{
     vertical-align: middle;
     display: flex;
     border: none;
+    padding-left: 10px;
+    outline: none;  
 }
 input::placeholder{
-    margin-left:10px;
+    font-style: italic;  
 }
 footer ion-icon{
     background-color: #ffffff;
