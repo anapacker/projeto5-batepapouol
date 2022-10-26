@@ -12,6 +12,7 @@ strong{
 }
 
 header{
+    background-color: #ffffff;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -31,23 +32,57 @@ img{
     margin-right: 22px;
 }
 
-main{
-    
-}
+
 .box-mesages{
     width: 100%;
     margin-top:112px;
 }
+span{
+    margin-left: 5px;
+}
+li{
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
 .mensagem{
+    background-color: #ffffff;
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 10px 10px;
 }
 .mensagem-privada{
     background-color: #FFDEDE;
+    
+
 }
 .mensagem-status{
     background-color:#DCDCDC ;
 
+}
+
+footer{
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+input{
+    width: 85%;
+    height: 60px;
+    vertical-align: middle;
+    display: flex;
+    border: none;
+}
+input::placeholder{
+    margin-left:10px;
+}
+footer ion-icon{
+    background-color: #ffffff;
+    width: 15%;
+    font-size:26px;
+    
 }
