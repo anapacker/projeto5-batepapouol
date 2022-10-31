@@ -82,6 +82,8 @@ function colocarNovasMensagensNaTela(mensagensNovas) {
 
     }
     document.querySelector(".box-mesages").innerHTML += boxMsgHTML;
+    document.querySelector(".box-mesages").lastElementChild.scrollIntoView({ behavior: "smooth", block: "center" });
+
     // }
 
 }
@@ -123,8 +125,7 @@ function construirMsgNaTela(resposta) {
 
     }
     document.querySelector(".box-mesages").innerHTML += boxMsgHTML;
-    // document.querySelectorAll(".box-mesages .mensagem").toArray().at(-1).scrollIntoView();
-
+    document.querySelector(".box-mesages").lastElementChild.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function entrarNaSala() {
@@ -151,4 +152,8 @@ function enviarNome() {
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/status", objName);
     promessa.then();
     promessa.catch();
+}
+
+function enviarMensagem() {
+
 }
