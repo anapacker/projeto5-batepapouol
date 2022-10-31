@@ -24,21 +24,21 @@ function continuarPegandoMsgNovas() {
 function filtrarMsgsNovas(resposta) {
     const todasAsMensagens = resposta.data;
     let mensagensNovas = [];
-    let indexMensagem = null;
+    let indexNovasMensagens = -1;
     for (let i = 0; i < todasAsMensagens.length; i++) {
 
         if (todasAsMensagens[i].from === ultimaMensagem.from && todasAsMensagens[i].time === ultimaMensagem.time) {
-            indexMensagem = i + 1;
+            indexNovasMensagens = i + 1;
         }
     }
 
-    if (indexMensagem < todasAsMensagens.length - 1) {
-        for (let j = indexMensagem; j < todasAsMensagens.length; j++) {
+    if (indexNovasMensagens < todasAsMensagens.length - 1) {
+        for (let j = indexNovasMensagens; j < todasAsMensagens.length; j++) {
             mensagensNovas.push(todasAsMensagens[j])
         }
     }
 
-    if (mensagensNovas.length > 0) {
+    if (mensagensNovas.length > 0 && indexNovasMensagens > -1) {
         colocarNovasMensagensNaTela(mensagensNovas)
     }
 }
