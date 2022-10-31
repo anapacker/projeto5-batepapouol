@@ -1,4 +1,5 @@
 let boxMsgHTML = "";
+entrarNaSala()
 buscarMsgServidor();
 setInterval(buscarMsgServidor, 3000);
 
@@ -41,5 +42,26 @@ function construirMsgNaTela(resposta) {
         boxMsgHTML += msgHTML;
 
     }
-    document.querySelector(".box-mesages").innerHTML += boxMsgHTML
+    document.querySelector(".box-mesages").innerHTML += boxMsgHTML;
+    // document.querySelectorAll(".box-mesages .mensagem").toArray().at(-1).scrollIntoView();
+
+}
+
+function entrarNaSala() {
+    const askName = prompt("Digite seu nome");
+    const objName = {
+        name: askName
+
+    }
+    const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", objName);
+    promessa.then();
+    promessa.catch(tratarErroLogin);
+
+
+
+}
+
+function tratarErroLogin() {
+    alert("Esse nome já existe");
+    entrarNaSala();
 }
