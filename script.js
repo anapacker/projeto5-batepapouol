@@ -60,21 +60,34 @@ function colocarNovasMensagensNaTela(mensagensNovas) {
         if (tipoMsg === "status") {
             msgHTML =
                 `
-                        <li class="mensagem status">
-                            <span class="horario-msg">(${objetoMsg.time})</span>
-                            <span class="remetente-msg"><strong>${objetoMsg.from}</strong> </span>
-                            <span class="status-msg">${objetoMsg.text}</span>
-                        </li>
-                  
-                `
+                    <li class="mensagem status">
+                        <span class="horario-msg">(${objetoMsg.time})</span>
+                        <span class="remetente-msg"><strong>${objetoMsg.from}</strong> </span>
+                        <span class="status-msg">${objetoMsg.text}</span>
+                    </li>
+              
+            `
         } else if (tipoMsg === "message") {
             msgHTML =
                 `<li class="mensagem">
+                <span class="horario-msg">(${objetoMsg.time})</span>
+                <span class="enviado-por"><strong>${objetoMsg.from}</strong></span>
+                para
+                <span class="remetente-msg"><strong>${objetoMsg.to}:</strong></span>
+                <span class="conteudo-msg">${objetoMsg.text}</span>
+            </li>`
+
+        } else if (tipoMsg === "private_message" && (objetoMsg.to == objName.name || objetoMsg.from == objName.name)) {
+            msgHTML = `
+                <li class="mensagem privada">
                     <span class="horario-msg">(${objetoMsg.time})</span>
-                    <span class="enviado-por">${objetoMsg.from}</strong></span>
-                    <span class="remetente-msg"><strong>${objetoMsg.to}:</strong></span>
+                    <span class="enviado-por"><strong>${objetoMsg.from}</strong></span>
+                    reservadamente para
+                    <span class="remetente-msg"><strong>${objetoMsg.to}</strong> </span>
                     <span class="conteudo-msg">${objetoMsg.text}</span>
-                </li>`
+                </li>
+                `
+
 
         }
 
@@ -114,7 +127,8 @@ function construirMsgNaTela(resposta) {
             msgHTML =
                 `<li class="mensagem">
                 <span class="horario-msg">(${objetoMsg.time})</span>
-                <span class="enviado-por">${objetoMsg.from}</strong></span>
+                <span class="enviado-por"><strong>${objetoMsg.from}</strong></span>
+                para
                 <span class="remetente-msg"><strong>${objetoMsg.to}:</strong></span>
                 <span class="conteudo-msg">${objetoMsg.text}</span>
             </li>`
@@ -122,11 +136,11 @@ function construirMsgNaTela(resposta) {
         } else if (tipoMsg === "private_message" && (objetoMsg.to == objName.name || objetoMsg.from == objName.name)) {
             msgHTML = `
                 <li class="mensagem privada">
-                    <span class="horario-msg">(09:21:45)</span>
-                    <span class="enviado-por"><strong>João</strong></span>
-                    <span class="resevado">reservadamente para</span>
-                    <span class="remetente-msg"><strong>Maria:</strong> </span>
-                    <span class="conteudo-msg">Oi gatinha quer tc?</span>
+                    <span class="horario-msg">(${objetoMsg.time})</span>
+                    <span class="enviado-por"><strong>${objetoMsg.from}</strong></span>
+                    reservadamente para
+                    <span class="remetente-msg"><strong>${objetoMsg.to}</strong> </span>
+                    <span class="conteudo-msg">${objetoMsg.text}</span>
                 </li>
                 `
 
