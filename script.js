@@ -167,6 +167,18 @@ function enviarNome() {
 }
 
 function enviarMensagem() {
+    const dadosMsg = {
+        from: objName.name,
+        to: "Todos",
+        text: "",
+        type: "message"
+    }
+    let texto = document.querySelector("footer input").value;
+    dadosMsg.text = texto;
+    const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", dadosMsg);
+    promessa.then(document.querySelector("footer input").value = "");
+
+    console.log(texto);
 
 
 }
