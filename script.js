@@ -119,6 +119,18 @@ function construirMsgNaTela(resposta) {
                 <span class="conteudo-msg">${objetoMsg.text}</span>
             </li>`
 
+        } else if (tipoMsg === "private_message" && (objetoMsg.to == objName.name || objetoMsg.from == objName.name)) {
+            msgHTML = `
+                <li class="mensagem privada">
+                    <span class="horario-msg">(09:21:45)</span>
+                    <span class="enviado-por"><strong>João</strong></span>
+                    <span class="resevado">reservadamente para</span>
+                    <span class="remetente-msg"><strong>Maria:</strong> </span>
+                    <span class="conteudo-msg">Oi gatinha quer tc?</span>
+                </li>
+                `
+
+
         }
 
         boxMsgHTML += msgHTML;
@@ -155,5 +167,6 @@ function enviarNome() {
 }
 
 function enviarMensagem() {
+
 
 }
